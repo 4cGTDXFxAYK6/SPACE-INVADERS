@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Invader PWA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+    <div id="game-container">
+        <div id="score">SCORE: 0</div>
+        <canvas id="gameCanvas"></canvas>
+        
+        <div id="controls">
+            <button id="leftBtn" class="ctrl-btn">◀</button>
+            <button id="fireBtn" class="ctrl-btn">FIRE</button>
+            <button id="rightBtn" class="ctrl-btn">▶</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>
